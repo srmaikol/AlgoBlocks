@@ -1,14 +1,8 @@
 package tests;
-import clases_tp.Dibujo;
-import clases_tp.Linea;
-import clases_tp.Personaje;
-import clases_tp.Posicion;
+import clases_tp.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.HashSet;
-import java.util.Set;
 
 public class TestPersonaje {
 	Personaje persona;
@@ -64,36 +58,20 @@ public class TestPersonaje {
     public void TestPersonajeSeMueveADerechaConLapizAbajoDibujaLinea(){
         persona.bajarLapiz();
         persona.moverDerecha();
-        Set prueba = setDePrueba(0,0,1,0);
-
-        Assert.assertEquals(prueba, dibujo.getLineas());
-
+        Assert.assertEquals("[0 0 1 0]", dibujo.getLineas().toString());
     }
 
     @Test
     public void TestPersonajeSeMueveAbajoConLapizAbajoDibujaLinea(){
         persona.bajarLapiz();
         persona.moverAbajo();
-        Set prueba = setDePrueba(0,0,0, -1);
-        Assert.assertEquals(prueba, dibujo.getLineas());
+        Assert.assertEquals("[0 0 0 -1]", dibujo.getLineas().toString());
     }
 
     @Test
     public void TestPersonajeSeMueveAbajoConLapizArribaNoDibujaNada(){
         persona.levantarLapiz();
         persona.moverAbajo();
-        Set vacio = new HashSet<>();
-        Assert.assertEquals(vacio, dibujo.getLineas());
+        Assert.assertEquals("[]", dibujo.getLineas().toString());
     }
-
-    // método auxiliar, crea un set con una línea para comparar con el dibujo
-    public Set setDePrueba(int x, int y, int x2, int y2){
-        Posicion pos1 = new Posicion(x, y);
-        Posicion pos2 = new Posicion(x2, y2);
-        Linea linea = new Linea(pos1, pos2);
-        Set<Linea> setDePrueba = new HashSet<Linea>();
-        setDePrueba.add(linea);
-        return setDePrueba;
-    }
-
 }

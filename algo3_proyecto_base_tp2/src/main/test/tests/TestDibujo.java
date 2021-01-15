@@ -21,11 +21,10 @@ public class TestDibujo {
         Linea linea2 = new Linea(pos2, pos3);
         dibujo1.agregarLinea(linea2);
 
+        Linea linea3 = new Linea(pos2, pos3);
+        dibujo1.agregarLinea(linea3);
 
-        Set<Linea> aver = new HashSet<Linea>();
-        aver.add(linea1);
-        aver.add(linea2);
+        Assert.assertEquals("[0 0 0 1, 0 1 1 1]", dibujo1.getLineas().toString());
 
-        Assert.assertEquals(dibujo1.getLineas(), aver);
     }
 }

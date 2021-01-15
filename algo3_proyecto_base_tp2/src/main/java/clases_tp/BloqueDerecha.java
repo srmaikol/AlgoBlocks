@@ -1,16 +1,14 @@
 package clases_tp;
 
-public class BloqueDerecha extends Bloque {
+public class BloqueDerecha implements Bloque {
 
-	public void mover(Personaje persona) {
-		
-		persona.moverDerecha();
-	}
-	
-	@Override
-	public void levantar(Personaje persona) {}
+    public void ejecutar(Personaje persona) {
+        persona.moverDerecha();
+    }
 
-	@Override
-	public void bajar(Personaje persona) {}
+    public void ejecutarInvertido(Personaje persona) {
+        persona.moverIzquierda();
+    }
+
 
 }

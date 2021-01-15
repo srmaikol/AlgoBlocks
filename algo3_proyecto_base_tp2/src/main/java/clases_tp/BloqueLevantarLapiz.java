@@ -1,16 +1,14 @@
 package clases_tp;
 
-public class BloqueLevantarLapiz extends Bloque {
+public class BloqueLevantarLapiz implements Bloque {
 
-	@Override
-	public void mover(Personaje persona) {}
-	@Override
-	public void levantar(Personaje persona) {
-		
-		persona.levantarLapiz();
-	}
+    public void ejecutar(Personaje persona) {
+        persona.levantarLapiz();
+    }
 
-	@Override
-	public void bajar(Personaje persona) {}
+    public void ejecutarInvertido(Personaje persona) {
+        persona.bajarLapiz();
+    }
+
 
 }

@@ -7,16 +7,18 @@ public class Linea {
     private Posicion fin;
 
     public Linea(Posicion pos1, Posicion pos2) {
-    com=pos1;
-    fin=pos2;
+        com = pos1;
+        fin = pos2;
     }
 
-    public Posicion getCom(){
+    public Posicion getCom() {
         return com;
     }
-    public Posicion getFin(){
+
+    public Posicion getFin() {
         return fin;
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -30,5 +32,10 @@ public class Linea {
     @Override
     public int hashCode() {
         return Objects.hash(com, fin);
+    }
+
+    @Override
+    public String toString() {
+        return com.getX() + " " + com.getY() + " " + fin.getX() + " " + fin.getY();
     }
 }

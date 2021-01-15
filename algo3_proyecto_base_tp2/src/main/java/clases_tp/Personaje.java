@@ -32,7 +32,7 @@ public class Personaje {
     }
 
     public int getPosY() {
-		return pos.getY();
+        return pos.getY();
     }
 
     public void moverAbajo() {
@@ -45,9 +45,9 @@ public class Personaje {
         lapiz = new LapizArriba();
     }
 
-    public Boolean lapizEstaAbajo(){
-    	return lapiz.estaAbajo();
-	}
+    public Boolean lapizEstaAbajo() {
+        return lapiz.estaAbajo();
+    }
 
     public void bajarLapiz() {
         lapiz = new LapizAbajo();

@@ -7,8 +7,8 @@ public class Posicion {
     private int y;
 
     public Posicion(int x, int y) {
-        this.x=x;
-        this.y=y;
+        this.x = x;
+        this.y = y;
     }
 
     public void setX(int x) {
@@ -19,10 +19,11 @@ public class Posicion {
         this.y = y;
     }
 
-    public int getX(){
+    public int getX() {
         return x;
     }
-    public int getY(){
+
+    public int getY() {
         return y;
     }
 
