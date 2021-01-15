@@ -19,79 +19,79 @@ public class TestBloque {
 	
 	@Test
 	public void testBloqueDerechaMuevePersonajeALaDerecha(){
-    	BloqueDerecha bloque = new BloqueDerecha();
-    	bloque.mover(persona);
+    	Bloque bloque = new BloqueDerecha();
+    	bloque.ejecutar(persona);
         Assert.assertEquals(1 , persona.getPosX());
     }
 	
 	@Test
     public void testBloqueDerechaMuevePersonajeALaDerechaVariasVeces(){
-    	BloqueDerecha bloque = new BloqueDerecha();
-    	bloque.mover(persona);
-    	bloque.mover(persona);
-    	bloque.mover(persona);
+    	Bloque bloque = new BloqueDerecha();
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
         Assert.assertEquals(3 , persona.getPosX());
     }
 	
 	@Test
 	public void testBloqueIzquierdaMuevePersonajeALaIzquierda(){
-		BloqueIzquierda bloque = new BloqueIzquierda();
-    	bloque.mover(persona);
+		Bloque bloque = new BloqueIzquierda();
+    	bloque.ejecutar(persona);
         Assert.assertEquals(-1 , persona.getPosX());
     }
 	
 	@Test
     public void testBloqueIzquierdaMuevePersonajeALaIzquierdaVariasVeces(){
-		BloqueIzquierda bloque = new BloqueIzquierda();
-    	bloque.mover(persona);
-    	bloque.mover(persona);
-    	bloque.mover(persona);
+		Bloque bloque = new BloqueIzquierda();
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
         Assert.assertEquals(-3 , persona.getPosX());
     }
 	
 	@Test
 	public void testBloqueArribaMuevePersonajeArriba(){
-		BloqueArriba bloque = new BloqueArriba();
-    	bloque.mover(persona);
+		Bloque bloque = new BloqueArriba();
+    	bloque.ejecutar(persona);
         Assert.assertEquals(1 , persona.getPosY());
     }
 	
 	@Test
     public void testBloqueArribaMuevePersonajeArribaVariasVeces(){
-		BloqueArriba bloque = new BloqueArriba();
-    	bloque.mover(persona);
-    	bloque.mover(persona);
-    	bloque.mover(persona);
+		Bloque bloque = new BloqueArriba();
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
         Assert.assertEquals(3 , persona.getPosY());
     }
 	
 	@Test
 	public void testBloqueAbajoMuevePersonajeAbajo(){
-		BloqueAbajo bloque = new BloqueAbajo();
-    	bloque.mover(persona);
+		Bloque bloque = new BloqueAbajo();
+    	bloque.ejecutar(persona);
         Assert.assertEquals(-1 , persona.getPosY());
     }
 	
 	@Test
     public void testBloqueAbajoMuevePersonajeAbajoVariasVeces(){
-		BloqueAbajo bloque = new BloqueAbajo();
-    	bloque.mover(persona);
-    	bloque.mover(persona);
-    	bloque.mover(persona);
+		Bloque bloque = new BloqueAbajo();
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
+    	bloque.ejecutar(persona);
         Assert.assertEquals(-3 , persona.getPosY());
     }
 	
 	@Test
 	public void testBloqueSubirLapizLevantaElLapiz(){
-		BloqueLevantarLapiz bloque = new BloqueLevantarLapiz();
-    	bloque.levantar(persona);
+		Bloque bloque = new BloqueLevantarLapiz();
+    	bloque.ejecutar(persona);
 		Assert.assertFalse(persona.lapizEstaAbajo());
     }
 	
 	@Test
 	public void testBloqueBajarLapizBajaElLapiz(){
-		BloqueBajarLapiz bloque = new BloqueBajarLapiz();
-    	bloque.bajar(persona);
+		Bloque bloque = new BloqueBajarLapiz();
+    	bloque.ejecutar(persona);
 		Assert.assertTrue(persona.lapizEstaAbajo());
     }
 }

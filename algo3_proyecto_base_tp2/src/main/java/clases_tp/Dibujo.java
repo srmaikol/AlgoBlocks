@@ -1,15 +1,16 @@
 package clases_tp;
 
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class Dibujo {
-    private Set<Linea> lineas = new HashSet<Linea>();
+    private Set<Linea> lineas = new LinkedHashSet<Linea>();
 
-    public void agregarLinea(Linea linea){
+    public void agregarLinea(Linea linea) {
         lineas.add(linea);
     }
-    public Set getLineas(){
+
+    public Set getLineas() {
         return lineas;
     }
 }

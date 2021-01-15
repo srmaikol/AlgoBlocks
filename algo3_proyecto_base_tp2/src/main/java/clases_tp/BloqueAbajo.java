@@ -1,16 +1,12 @@
 package clases_tp;
 
-public class BloqueAbajo extends Bloque {
+public class BloqueAbajo implements Bloque {
 
-	public void mover(Personaje persona) {
-		
-		persona.moverAbajo();
-	}
+    public void ejecutar(Personaje persona) {
+        persona.moverAbajo();
+    }
 
-	@Override
-	public void levantar(Personaje persona) {}
-
-	@Override
-	public void bajar(Personaje persona) {}
-
+    public void ejecutarInvertido(Personaje persona) {
+        persona.moverArriba();
+    }
 }
