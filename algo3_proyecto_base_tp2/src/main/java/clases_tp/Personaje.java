@@ -9,47 +9,33 @@ public class Personaje {
         this.dibujo = dibujo;
     }
 
-    public void moverDerecha() {
-        Posicion pos2 = new Posicion(pos.getX() + 1, pos.getY());
+    public void mover(Integer dx, Integer dy) {
+        Posicion pos2 = new Posicion(pos.getX() + dx, pos.getY() + dy);
         lapiz.dibujar(dibujo, pos, pos2);
         pos = pos2;
     }
 
-    public int getPosX() {
-        return pos.getX();
-    }
-
-    public void moverIzquierda() {
-        Posicion pos2 = new Posicion(pos.getX() - 1, pos.getY());
-        lapiz.dibujar(dibujo, pos, pos2);
-        pos = pos2;
-    }
-
-    public void moverArriba() {
-        Posicion pos2 = new Posicion(pos.getX(), pos.getY() + 1);
-        lapiz.dibujar(dibujo, pos, pos2);
-        pos = pos2;
-    }
-
-    public int getPosY() {
-        return pos.getY();
-    }
-
-    public void moverAbajo() {
-        Posicion pos2 = new Posicion(pos.getX(), pos.getY() - 1);
-        lapiz.dibujar(dibujo, pos, pos2);
-        pos = pos2;
+    public void bajarLapiz() {
+        lapiz = new LapizAbajo();
     }
 
     public void levantarLapiz() {
         lapiz = new LapizArriba();
     }
 
+    //  PARA TESTING
     public Boolean lapizEstaAbajo() {
         return lapiz.estaAbajo();
     }
 
-    public void bajarLapiz() {
-        lapiz = new LapizAbajo();
+    // PARA TESTING
+    public int getPosX() {
+        return pos.getX();
     }
+
+    // PARA TESTING
+    public int getPosY() {
+        return pos.getY();
+    }
+
 }

@@ -1,8 +1,8 @@
 package tests;
 import clases_tp.*;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestPersonaje {
 	Personaje persona;
@@ -15,63 +15,63 @@ public class TestPersonaje {
 
     @Test
     public void testPersonajeSeMueveALaDerecha(){
-    	persona.moverDerecha();
-        Assert.assertEquals(1 , persona.getPosX());
+    	persona.mover(1,0);
+        assertEquals(1 , persona.getPosX());
     }
     
     @Test
     public void testPersonajeSeMueveALaIzquierda(){
-    	persona.moverIzquierda();
-        Assert.assertEquals(-1 , persona.getPosX());
+    	persona.mover(-1,0);
+        assertEquals(-1 , persona.getPosX());
     }
     
     @Test
     public void testPersonajeSeMueveArriba(){
-    	persona.moverArriba();
-        Assert.assertEquals(1 , persona.getPosY());
+    	persona.mover(0,1);
+        assertEquals(1 , persona.getPosY());
     } 
     
     @Test
     public void testPersonajeSeMueveAbajo(){
-    	persona.moverAbajo();
-        Assert.assertEquals(-1 , persona.getPosY());
+    	persona.mover(0,-1);
+        assertEquals(-1 , persona.getPosY());
     }
     
     @Test
     public void testPersonajeElLapizEstaArribaCuandoSeCreaElPersonaje(){
-    	Assert.assertFalse(persona.lapizEstaAbajo());
+    	assertFalse(persona.lapizEstaAbajo());
     }
     
     @Test
     public void testPersonajeElLapizEstaArriba(){
     	persona.levantarLapiz();
-        Assert.assertFalse(persona.lapizEstaAbajo());
+        assertFalse(persona.lapizEstaAbajo());
     }
 
     @Test
     public void testPersonajeElLapizEstaAbajo(){
         persona.bajarLapiz();
-        Assert.assertTrue(persona.lapizEstaAbajo());
+        assertTrue(persona.lapizEstaAbajo());
     }
 
     @Test
     public void TestPersonajeSeMueveADerechaConLapizAbajoDibujaLinea(){
         persona.bajarLapiz();
-        persona.moverDerecha();
-        Assert.assertEquals("[0 0 1 0]", dibujo.getLineas().toString());
+        persona.mover(1,0);
+        assertEquals("[0 0 1 0]", dibujo.getLineas().toString());
     }
 
     @Test
     public void TestPersonajeSeMueveAbajoConLapizAbajoDibujaLinea(){
         persona.bajarLapiz();
-        persona.moverAbajo();
-        Assert.assertEquals("[0 0 0 -1]", dibujo.getLineas().toString());
+        persona.mover(0,-1);
+        assertEquals("[0 0 0 -1]", dibujo.getLineas().toString());
     }
 
     @Test
     public void TestPersonajeSeMueveAbajoConLapizArribaNoDibujaNada(){
         persona.levantarLapiz();
-        persona.moverAbajo();
-        Assert.assertEquals("[]", dibujo.getLineas().toString());
+        persona.mover(0,-1);
+        assertEquals("[]", dibujo.getLineas().toString());
     }
 }

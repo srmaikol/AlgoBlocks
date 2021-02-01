@@ -1,8 +1,8 @@
 package tests;
 
 import clases_tp.*;
-import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestAlgoBlocksBloquesRepetidores {
 
@@ -16,7 +16,7 @@ public class TestAlgoBlocksBloquesRepetidores {
         repite2.agregarBloque(new BloqueDerecha());
         algoBlocks.agregarBloque(repite2);
         algoBlocks.ejecutar();
-        Assert.assertEquals("[0 0 1 0, 1 0 1 -1, 1 -1 2 -1, 2 -1 2 -2, 2 -2 3 -2]", algoBlocks.getLineas().toString());
+        assertEquals("[0 0 1 0, 1 0 1 -1, 1 -1 2 -1, 2 -1 2 -2, 2 -2 3 -2]", algoBlocks.getLineas().toString());
 
     }
     @Test
@@ -27,8 +27,7 @@ public class TestAlgoBlocksBloquesRepetidores {
         repite3.agregarBloque(new BloqueDerecha());
         algoBlocks.agregarBloque(repite3);
         algoBlocks.ejecutar();
-//        System.out.println(dibujo.getLineas().toString());
-        Assert.assertEquals("[0 0 1 0, 1 0 2 0, 2 0 3 0]", algoBlocks.getLineas().toString());
+        assertEquals("[0 0 1 0, 1 0 2 0, 2 0 3 0]", algoBlocks.getLineas().toString());
 
     }
 

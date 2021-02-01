@@ -1,13 +1,10 @@
 package tests;
 
-import clases_tp.AlgoBlocks;
-import clases_tp.BloqueAbajo;
-import clases_tp.BloqueBajarLapiz;
-import clases_tp.BloqueDerecha;
-import org.junit.Assert;
+import clases_tp.*;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-public class TestAlgoBlocksBorrarAlgoritmo {
+public class TestAlgoBlocks03BorrarAlgoritmoNoDibujaNada {
 
     @Test
     public void testAlgoritmoBorradoNoDibujaNada(){
@@ -18,7 +15,7 @@ public class TestAlgoBlocksBorrarAlgoritmo {
         algoBlocks.agregarBloque(new BloqueAbajo());
         algoBlocks.borrarAlgoritmo();
         algoBlocks.ejecutar();
-        Assert.assertEquals("[]", algoBlocks.getLineas().toString());
+        assertEquals("[]", algoBlocks.getLineas().toString());
     }
 
 }
