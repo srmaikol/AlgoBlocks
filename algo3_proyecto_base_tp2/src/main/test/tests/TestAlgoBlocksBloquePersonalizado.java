@@ -1,8 +1,8 @@
 package tests;
 
 import clases_tp.*;
-import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestAlgoBlocksBloquePersonalizado {
 
@@ -14,18 +14,14 @@ public class TestAlgoBlocksBloquePersonalizado {
         algoBlocks.agregarBloque(new BloqueDerecha());
         algoBlocks.agregarBloque(new BloqueArriba());
 
-        BloquePersonalizado personalizado = algoBlocks.nuevoBloquePersonalizado();
+        BloquePersonalizado personalizado = algoBlocks.crearBloquePersonalizado();
 
         algoBlocks.borrarAlgoritmo();
         algoBlocks.agregarBloque(personalizado);
-        //System.out.println(algoBlocks.getListaBloques());
 
+        algoBlocks.ejecutar();
 
-        // LA SIGUIENTE LINEA ENTRA EN LOOP INFINITO Y SE CUELGA
-        //algoBlocks.ejecutar();
-
-        //System.out.println(algoBlocks.getLineas());
-        //        Assert.assertEquals("[0 0 1 0, 1 0 1 -1]", algoBlocks.getLineas().toString());
+        assertEquals("[0 0 1 0, 1 0 1 1]", algoBlocks.getLineas().toString());
 
     }
 

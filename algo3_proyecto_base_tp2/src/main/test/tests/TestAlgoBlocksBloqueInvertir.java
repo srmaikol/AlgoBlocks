@@ -1,8 +1,8 @@
 package tests;
 
 import clases_tp.*;
-import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class TestAlgoBlocksBloqueInvertir {
 
@@ -18,7 +18,6 @@ public class TestAlgoBlocksBloqueInvertir {
         algoBlocks.agregarBloque(invertido);
 
         algoBlocks.ejecutar();
-        Assert.assertEquals("[0 0 -1 0, -1 0 -1 1]", algoBlocks.getLineas().toString());
-        //    System.out.println(algoBlocks.getDibujo().getLineas().toString());
+        assertEquals("[0 0 -1 0, -1 0 -1 1]", algoBlocks.getLineas().toString());
     }
 }

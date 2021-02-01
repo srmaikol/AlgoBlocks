@@ -1,13 +1,12 @@
 package tests;
 
 import clases_tp.*;
-
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 
-public class TestBloque {
+public class TestBloqueArribaAbajoDerechaIzquierdaLevantaBaja {
 	Dibujo dibujo;
 	Personaje persona;
 
@@ -21,7 +20,7 @@ public class TestBloque {
 	public void testBloqueDerechaMuevePersonajeALaDerecha(){
     	Bloque bloque = new BloqueDerecha();
     	bloque.ejecutar(persona);
-        Assert.assertEquals(1 , persona.getPosX());
+        assertEquals(1 , persona.getPosX());
     }
 	
 	@Test
@@ -30,14 +29,14 @@ public class TestBloque {
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
-        Assert.assertEquals(3 , persona.getPosX());
+        assertEquals(3 , persona.getPosX());
     }
 	
 	@Test
 	public void testBloqueIzquierdaMuevePersonajeALaIzquierda(){
 		Bloque bloque = new BloqueIzquierda();
     	bloque.ejecutar(persona);
-        Assert.assertEquals(-1 , persona.getPosX());
+        assertEquals(-1 , persona.getPosX());
     }
 	
 	@Test
@@ -46,14 +45,14 @@ public class TestBloque {
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
-        Assert.assertEquals(-3 , persona.getPosX());
+        assertEquals(-3 , persona.getPosX());
     }
 	
 	@Test
 	public void testBloqueArribaMuevePersonajeArriba(){
 		Bloque bloque = new BloqueArriba();
     	bloque.ejecutar(persona);
-        Assert.assertEquals(1 , persona.getPosY());
+        assertEquals(1 , persona.getPosY());
     }
 	
 	@Test
@@ -62,14 +61,14 @@ public class TestBloque {
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
-        Assert.assertEquals(3 , persona.getPosY());
+        assertEquals(3 , persona.getPosY());
     }
 	
 	@Test
 	public void testBloqueAbajoMuevePersonajeAbajo(){
 		Bloque bloque = new BloqueAbajo();
     	bloque.ejecutar(persona);
-        Assert.assertEquals(-1 , persona.getPosY());
+        assertEquals(-1 , persona.getPosY());
     }
 	
 	@Test
@@ -78,20 +77,20 @@ public class TestBloque {
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
     	bloque.ejecutar(persona);
-        Assert.assertEquals(-3 , persona.getPosY());
+        assertEquals(-3 , persona.getPosY());
     }
 	
 	@Test
 	public void testBloqueSubirLapizLevantaElLapiz(){
 		Bloque bloque = new BloqueLevantarLapiz();
     	bloque.ejecutar(persona);
-		Assert.assertFalse(persona.lapizEstaAbajo());
+		assertFalse(persona.lapizEstaAbajo());
     }
 	
 	@Test
 	public void testBloqueBajarLapizBajaElLapiz(){
 		Bloque bloque = new BloqueBajarLapiz();
     	bloque.ejecutar(persona);
-		Assert.assertTrue(persona.lapizEstaAbajo());
+		assertTrue(persona.lapizEstaAbajo());
     }
 }

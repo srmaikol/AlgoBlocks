@@ -6,6 +6,8 @@ public class LapizAbajo implements Lapiz {
         dibujo.agregarLinea(linea);
     }
 
+    //  PARA TESTING
+    @Override
     public boolean estaAbajo() {
         return true;
     }

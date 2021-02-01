@@ -1,13 +1,10 @@
 package tests;
 
 import clases_tp.*;
-import org.junit.Assert;
 import org.junit.Test;
+import static org.junit.Assert.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class TestDibujo {
+public class TestDibujoAgregarLineasQuedanGuardadas {
     @Test
     public void TestAgregarLineas(){
         Dibujo dibujo1 = new Dibujo();
@@ -24,7 +21,7 @@ public class TestDibujo {
         Linea linea3 = new Linea(pos2, pos3);
         dibujo1.agregarLinea(linea3);
 
-        Assert.assertEquals("[0 0 0 1, 0 1 1 1]", dibujo1.getLineas().toString());
+        assertEquals("[0 0 0 1, 0 1 1 1]", dibujo1.getLineas().toString());
 
     }
 }

@@ -8,7 +8,7 @@ public class BloquePersonalizado implements Bloque {
     private List<Bloque> listaBloquesPersonalizada = new ArrayList<Bloque>();
 
     public BloquePersonalizado(List<Bloque> listaBloques) {
-        listaBloquesPersonalizada = listaBloques;
+        listaBloquesPersonalizada.addAll(listaBloques);
         //System.out.println(listaBloquesPersonalizada);
     }
 

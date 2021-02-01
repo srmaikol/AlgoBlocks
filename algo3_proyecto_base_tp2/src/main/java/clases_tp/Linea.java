@@ -11,15 +11,6 @@ public class Linea {
         fin = pos2;
     }
 
-    public Posicion getCom() {
-        return com;
-    }
-
-    public Posicion getFin() {
-        return fin;
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -34,6 +25,7 @@ public class Linea {
         return Objects.hash(com, fin);
     }
 
+    // PARA EL TESTING
     @Override
     public String toString() {
         return com.getX() + " " + com.getY() + " " + fin.getX() + " " + fin.getY();
