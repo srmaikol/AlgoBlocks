@@ -1,7 +1,7 @@
 package tests;
 
-import clases_tp.Linea;
-import clases_tp.Posicion;
+import modelo.Linea;
+import modelo.Posicion;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

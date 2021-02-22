@@ -1,5 +1,5 @@
 package tests;
-import clases_tp.*;
+import modelo.*;
 import static  org.junit.Assert.*;
 import org.junit.Test;
 
